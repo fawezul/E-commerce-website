@@ -1,0 +1,647 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global Styles */
+
+h1 {
+  font-size: 50px;
+  line-height: 64px;
+  color: #222;
+}
+
+h2 {
+  font-size: 46px;
+  line-height: 54px;
+  color: #222;
+}
+
+h4 {
+  font-size: 20px;
+  color: #222;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+p {
+  font-size: 16px;
+  color: #465b52;
+  margin: 15px 0 20px 0;
+}
+
+.section-p1 {
+  padding: 40px 80px;
+}
+
+.section-m1 {
+  margin: 40px 0;
+}
+
+body {
+  width: 100%;
+}
+
+#header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px; 
+    background: #e3e6f3;
+    box-shadow: 0 5px rgb(0,0,0,0.06);
+    
+    /* z-index:999; */
+    /* position: sticky; */
+    /* padding: top, right, bottom, left*/
+    z-index:999;
+    position: sticky;
+    top: 0;
+    left: 0;
+  
+}
+
+#navbar{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    /* transition: 0.3s ease; */
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #088178
+}
+#navbar li a.active::after,
+#navbar li a:hover::after{
+    content: "";
+    width: 30%;
+    height:2px;
+    background:#088178 ;
+    position: absolute;
+    bottom: -4px;
+    left:20px
+}
+
+/* Get rid of the shopping bag and shortcut icon when full screen */
+#mobile {
+  display: none;
+  align-items: center;
+}
+/* Removes the x icon when in full screen */
+#close{
+  display: none;
+}
+
+#hero{
+    background-image: url("img/hero4.png");
+    height:90vh; 
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+    padding: 0 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#hero h4{
+    padding-bottom: 15px;
+}
+#hero h1{
+    color: #088178
+}
+
+#hero button{
+    background-image: url("img/button.png");
+    background-color:  transparent;
+    color: #344140;
+    border: 0;
+    padding: 14px 80px 14px 65px;
+
+    /* background-repeat: no-repeat; */
+    /* cursor: pointer; */
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+#feature .fe-box{
+  width: 180px;
+  text-align: center;
+  padding:25px 15px;
+  box-shadow: 20px 20px 43px rgba(0,0,0,0.03);
+  border: 1px solid #cce7d0;
+  border-radius:4px;
+  margin: 15px 0;
+}
+#feature{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
+}
+
+/* :hover */
+#feature .fe-box:hover{
+  box-shadow: 10px 10px 54px rgba(70,62,221,0.1);
+}
+
+#feature .fe-box img{
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#feature .fe-box h6{
+  /* display: inline-block */
+  display: inline-block; 
+  padding: 9px 8px 6px 8px;
+  line-height: 1;
+  border-radius: 4px;
+  color:#088178;
+  background-color: #fddde4;
+  pointer-events: none;
+}
+
+/* :nth child */
+#feature .fe-box:nth-child(2) h6{
+  background-color: #cdebbc;
+}
+#feature .fe-box:nth-child(3) h6{
+  background-color: lightgoldenrodyellow;
+}
+#feature .fe-box:nth-child(4) h6{
+  background-color: pink;
+}
+#feature .fe-box:nth-child(5) h6{
+  background-color: yellowgreen;
+}
+#feature .fe-box:nth-child(6) h6{
+  background-color: rgb(212, 172, 112);
+}
+
+#product1{
+  text-align: center;
+}
+
+#product1 .pro{
+  width: 23%;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #cce7d0;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 20px 20px 30px rgba(0,0,0,0.02);
+  margin: 15px 0;
+  transition: 0.2s ease;
+  /* For shooping cart icon to be underneath product1, position relative */
+  position: relative;
+}
+
+#product1 .pro:hover{
+  box-shadow: 20px 20px 30px rgba(0,0,0,0.06);
+}
+
+#product1 .pro img{
+  /* width:100%; */
+  /* border-radius: 20px; */
+  width:100%;
+  border-radius: 20px;
+}
+
+#product1 .pro .des {
+  text-align: start;
+  padding: 10px 0;
+}
+
+#product1 .pro .des span {
+  color: #606063;
+  font-size: 12px;
+}
+
+#product1 .pro .des h5 {
+  padding-top: 7px;
+  color: #1a1a1a;
+  font-size: 14px;
+}
+#product1 .pro .des i {
+  font-size: 12px;
+  color: rgb(243, 181,25)
+}
+
+#product1 .pro .des h4{
+  padding-top:7px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #088178
+}
+
+#product1 .pro .cart{
+  width:40px;
+  height:40px;
+  line-height: 40px;
+  border-radius:50px;
+  background-color: #e8f6ea;
+  font-weight:500;
+  color:#088178;
+  border:1px solid #cce7d0;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+}
+
+#product1 .pro-container{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+
+#banner{
+  display:flex;
+  /* flex-direction: column; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("img/banner/b2.jpg");
+  width: 100%;
+  height: 40vh;
+  /* background-size: cover; */
+  background-size: cover;
+  background-position: center;
+}
+
+#banner h4{
+  color: white;
+  font-size: 16px;
+}
+
+#banner h2{
+  color:white;
+  font-size: 30px;
+  padding: 10px 0;
+}
+
+#banner h2 span{
+  color:red;
+}
+
+button.normal{
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  color: #000;
+  background-color: #fff;
+  border-radius:4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+}
+
+#banner button:hover {
+  background: #088178;
+}
+
+#sm-banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#sm-banner .banner-box{
+  display:flex;
+  /* flex-direction: column; */
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-image: url("img/banner/b17.jpg");
+  min-width: 580px;
+  height: 50vh;
+  /* background-size: cover; */
+  background-size: cover;
+  background-position: center;
+  padding: 30px
+}
+
+#sm-banner .banner-box2{
+  background-image: url("img/banner/b10.jpg");
+}
+
+#sm-banner h4{
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+#sm-banner h2{
+  color: white;
+  font-size: 28px;
+  font-weight: 800;
+}
+#sm-banner span{
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 15px;
+}
+
+button.white{
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 18px;
+  color: #fff;
+  background-color: transparent;
+  border-radius:4px;
+  cursor: pointer;
+  border: 1px solid white;
+  outline: none;
+  transition: 0.2s;
+}
+/* When hover the card, the button change color */
+#sm-banner .banner-box:hover button{
+  background-color: #088178;
+  border: 1px solid #088178;
+}
+
+#banner3{
+  display:flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
+  padding:0 80px;
+}
+
+#banner3 .banner-box{
+  display:flex;
+  /* flex-direction: column; */
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-image: url("img/banner/b7.jpg");
+  min-width: 30%;
+  height: 30vh;
+  /* background-size: cover; */
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  margin-bottom: 20px;
+
+}
+#banner3 .banner-box2{
+  background-image: url("img/banner/b4.jpg");
+
+}
+#banner3 .banner-box3{
+  background-image: url("img/banner/b18.jpg");
+}
+#banner3 h2{
+  color: white;
+  font-weight: 900;
+  font-size: 22px;
+}
+
+#banner3 h3{
+  color: #ec544e;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+#newsletter{
+  /* All in one row */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  /* Add background image */
+  background-image: url("img/banner/b14.jpg");
+  background-repeat: no-repeat;
+  background-position: 20% 30%;
+  background-color: #041e42;
+}
+#newsletter h4{
+  font-size: 22px;
+  font-weight: 700;
+  color: #818ea0;
+}
+
+#newsletter p span{
+  color: yellow;
+}
+
+#newsletter .form{
+  display: flex;
+
+  width: 40%;
+}
+
+#newsletter input{
+  height: 3.125rem;
+  padding: 0 1.23rem;
+  font-size: 14px;
+  width:100%;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  outline:none;
+  /* Get Rid of round border radius on right side*/
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#newsletter button{
+  background-color: #088178;
+  color: white;
+  white-space: nowrap;
+  /* Get Rid of round border radius on left side*/
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+footer .copyright{
+  text-align: center;
+}
+
+/* When screen reaches less than 799px width, changes will apply. For tablet device*/
+@media (max-width:799px){
+  .section-p1{
+    padding: 40px 40px;
+  }
+
+  #navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100vh;
+    width: 300px;
+    background-color: #e3e6f3;
+    box-shadow:0 40px 60px rgba(0,0,0,0.02);
+    padding:80px 0 0 10px;
+    /* When shortcut icon is clicked , can see navbar moving from left. */
+    transition: 0.3s;
+}
+
+/* added from script.js */
+#navbar.active{
+  right:0px;
+}
+
+/* Space the links from bottom margin */
+#navbar li{
+  margin-bottom: 25px;
+}
+
+#mobile {
+  display: flex;
+  align-items: center;
+  cursor:pointer;
+}
+
+#mobile i{
+  color:#1a1a1a;
+  font-size: 24px;
+  padding-left: 20px;
+}
+
+/* Changing the X icon to top of navbar, when in tablet viewport. */
+#close{
+  /* prevents the x icon to disappear when in tablet screen.  */
+  display:initial; 
+
+  position: absolute;
+  top:30px;
+  left:30px;
+  color:#222;
+  font-size: 24px;
+}
+
+/* Remove the shopping in navbar when tablet screen */
+#lg-bag{
+  display: none;
+}
+
+/* Change when in tablet screen. */
+  #hero {
+    height: 70vh;
+    padding:0 80;
+    background-position: top 30% right 30%;
+}
+#feature{
+  justify-content: center;
+}
+#feature .fe-box{
+  margin: 15px 15px;
+}
+
+#product1 .pro-container {
+  justify-content: center;
+}
+#product1 .pro{
+  margin:15px;
+}
+#banner{
+  height:20vh;
+}
+
+#sm-banner .banner-box{
+  min-width: 100%;
+  height: 30vh;
+}
+
+#banner3{
+  padding: 0 40px;
+}
+
+}
+
+/* When screen reaches less than 477px width, changes will apply. For mobile device*/
+@media (max-width: 477px){
+  .section-p1{
+    padding:20px;
+  }
+  #header {
+    padding: 10px 30px;
+  }
+  h1{
+    font-size: 38px;
+  }
+  h2{
+    font-size: 32px;
+  }
+  #hero{
+    padding: 0 20px;
+    background-position: 55%;
+  }
+
+  /* Add space between the 2 columns; */
+  #feature{
+    justify-content: space-between;
+  }
+  /* Feature section to have 2 columns; */
+  #feature .fe-box {
+    width: 155px;
+    margin: 0 0 15px 0;
+}
+
+/* Product1 section (featured products look smaller) */
+#product1 .pro{
+  width:23%;
+}
+/* Banner */
+#banner{
+  height:40vh;
+}
+#sm-banner .banner-box{
+  height:40vh;
+}
+/* Add space on top of the banner2 */
+#sm-banner .banner-box2{
+  margin-top: 20px;
+}
+#banner3{
+  padding: 0 20px;
+}
+#banner3 .banner-box{
+  width:100%;
+}
+/* Newletter section */
+#newsletter{
+  padding: 40px 20px;
+}
+#newsletter .form{
+  width:100%;
+}
+footer .copyright{
+  text-align: start;
+}
+}
